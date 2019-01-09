@@ -48,11 +48,9 @@
 }
 
 .Images {
-  display: inline-block;
-  flex-direction: column;
+  height: 50%;
+  width: 50%;
+  height: fit-content;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  padding: 5%;
-  height: fit-content;
 }
