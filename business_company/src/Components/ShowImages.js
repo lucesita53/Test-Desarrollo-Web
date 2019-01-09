@@ -3,7 +3,7 @@ import '../App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-
+import all from '../Images/All.png'
 import facebook from '../Images/Facebook.png';
 import apple from '../Images/Apple.jpg';
 import microsoft from '../Images/Microsoft.png';
@@ -13,23 +13,28 @@ import amazon from '../Images/Amazon.png';
 class ShowImages extends Component {
   render() {
     return (
-        <Carousel showThumbs={false} showArrows={true} showStatus={true} autoPlay={true} >
-            <div>
-                <img src={facebook}/>
+        <div>
+            <div className='Images' >
+                <img src={all} style={{width: 700}}/>
             </div>
-            <div>
-                <img src={apple}/>
-            </div>
-            <div>
-                <img src={microsoft}/>
-            </div>
-            <div>
-                <img src={google}/>
-            </div>
-            <div>
-                <img src={amazon}/>
-            </div>
-        </Carousel>
+            <Carousel showThumbs={false} showArrows={true} showStatus={true} autoPlay={true} >
+                <div>
+                    <img src={facebook}/>
+                </div>
+                <div>
+                    <img src={apple}/>
+                </div>
+                <div>
+                    <img src={microsoft}/>
+                </div>
+                <div>
+                    <img src={google}/>
+                </div>
+                <div>
+                    <img src={amazon}/>
+                </div>
+            </Carousel>
+        </div>
     );
   }
 }
