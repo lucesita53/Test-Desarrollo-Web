@@ -5,15 +5,23 @@
  
 
 Sitio Web del inversor para consultar precios de acciones en la bolsa de valores en los Estados Unidos.
+
 El usuario podrá seleccionar entre una lista de 5 empresas que son de su interés para consultar los precios de las acciones:
+
 Facebook (FB)
+
 Apple (AAPL)
+
 Microsoft (MSFT)
+
 Google (GOOGL)
+
 Amazon (AMZN)
 
 Cada empresa tiene entre paréntesis el símbolo que la representa en el mercado de valores por ejemplo el símbolo de Facebook es "FB". 
+
 El usuario puede seleccionar de una empresa a la vez para consultar el valor actual de la acción, luego la pagina web utilizará un servicio llamado Alpha Vantage para obtener los precios y poder presentarlos en la pagina web para el usuario.
+
 Para darle mas riqueza en la información al usuario, la pagina web deberá comparar el precio del día con el precio anterior y ver si el precio a incrementado o disminuido, en qué proporción porcentual (por ejemplo disminuyó un 1.4% el precio) y en qué valor (por ejemplo disminuyó USD 2.38). 
 
  
