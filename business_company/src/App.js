@@ -38,7 +38,7 @@ class App extends Component {
             <img src={all} style={{width: 300}}/>
           </div>
         </div>
-        <div style={{paddingTop: 50, paddingLeft: 100, justifyContent: "flex"}}>
+        <div style={{paddingLeft: 100}}>
           <ShowImages ref={component => this.carousel = component} />
         </div>
 
