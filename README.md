@@ -1,7 +1,6 @@
 # Test-Desarrollo-Web
 
 - Test Desarrollo Web -
-
  
 
 Sitio Web del inversor para consultar precios de acciones en la bolsa de valores en los Estados Unidos.
@@ -57,3 +56,15 @@ Ejemplo de una API call para obtener información de valores de acción para Fac
 - Utilizar React + NodeJS para el desarrollo del ejercicio.
 
 - Control de código fuente debe estar en git (github o bitbucket) y utilizar estrategia de branching para el desarrollo y release tag para la version a presentar.
+
+-------------------------------------------------------------------------------------------
+
+Estrategia de branching utilizada es la siguiente:
+master: contiene el código principal (funcional y testeado).
+Cada feature se codifica en una rama que lleva el nombre de la task. Cuando una feature se termina de codificar en su branch, se testea y luego se mergea a master.
+
+Task:
+Readme: Información: Contiene el ejercicio solicitado y la estrategia de branching.
+Test-1: Diseño de interfaz: crear una screen principal que contenga todos los componentes indicados en el diseño con sus respectivos estilos.
+Test-2: Servicio: Realizar la llamada al servicio de Alpha Vantage API.
+Test-3: Conexión: Popular los componentes con datos que provee el servicio.
