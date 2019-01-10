@@ -1,5 +1,5 @@
 .App {
-  text-align: left;
+  text-align: center;
   background-color: #282c34;
 }
 
@@ -12,8 +12,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding-top: 5%;
-  padding-left: 10%;
+  padding-top: 1%;
+  padding-left: 5%;
 }
 
 .SelectBusiness {
@@ -26,6 +26,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding-left: 5%;
+  text-align: left;
 }
 
 .App-body {
@@ -48,12 +49,17 @@
   font-size: calc(10px + 2vmin);
   padding: 5%;
   height: fit-content;
+  text-align: left;
 }
 
 .ImagesCarousel {
-  height: 40%;
-  width: 40%;
-  height: fit-content;
-  align-items: center;
+  height: 20%;
+  width: 20%;
+  background-color: #282c34;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
   justify-content: center;
+  font-size: calc(10px + 2vmin);
 }

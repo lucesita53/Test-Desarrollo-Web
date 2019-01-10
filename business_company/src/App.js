@@ -32,10 +32,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+        <div style={{paddingLeft: 50, paddingRight: 50}}>
           <h2>Test Web Development</h2>
-          <div style={{paddingLeft: 50}}>
-                <img src={all} style={{width: 300}}/>
+          <div>
+            <img src={all} style={{width: 300}}/>
           </div>
+        </div>
+        <div style={{paddingTop: 50, paddingLeft: 100, justifyContent: "flex"}}>
+          <ShowImages ref={component => this.carousel = component} />
+        </div>
+
         </header>
         <body>
           <div className="SelectBusiness">
@@ -49,7 +55,6 @@ class App extends Component {
           </div>
           <div className="App-body">
             <ShowResults />
-            <ShowImages ref={component => this.carousel = component} />
           </div>
         </body>
       </div>
