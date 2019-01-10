@@ -1,16 +1,19 @@
 .App {
   text-align: left;
+  background-color: #282c34;
 }
 
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
-  display: flex;
+  display: -webkit-inline-box;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-top: 5%;
+  padding-left: 10%;
 }
 
 .SelectBusiness {
@@ -47,9 +50,9 @@
   height: fit-content;
 }
 
-.Images {
-  height: 50%;
-  width: 50%;
+.ImagesCarousel {
+  height: 40%;
+  width: 40%;
   height: fit-content;
   align-items: center;
   justify-content: center;
