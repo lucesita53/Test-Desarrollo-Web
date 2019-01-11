@@ -15,7 +15,12 @@ class ShowResults extends Component {
     high :'',
     low: '',
     close: '',
-    date: ''
+    date: '',
+    yesterday: '',
+    openYesterday : '',
+    highYesterday :'',
+    lowYesterday : '',
+    closeYesterday : ''
   }
 
   componentDidMount() {
@@ -26,14 +31,19 @@ class ShowResults extends Component {
     this.calls.callWebService(this.onResponse, newResult);
   }
 
-   onResponse = ({open, high, low, close, date}) =>{
+   onResponse = ({open, high, low, close, date, yesterday, openYesterday, highYesterday, lowYesterday, closeYesterday}) =>{
      //TODO: validar si son diferentes, calcular la diferencia y el %
      //TODO: Si el valor del % es negativo ponerle color rojo, sino verde
     this.setState({open: open,
       high :high,
       low: low,
       close: close,
-      date: date});
+      date: date,
+      yesterday: yesterday,
+      openYesterday : openYesterday,
+      highYesterday : highYesterday,
+      lowYesterday : lowYesterday,
+      closeYesterday : closeYesterday});
   }
 
   render() {
@@ -44,6 +54,11 @@ class ShowResults extends Component {
             <text>High: {this.state.high}</text>
             <text>Low: {this.state.low}</text>
             <text>Close: {this.state.close}</text>
+            <text>Yesterday: {this.state.yesterday} </text>
+            <text>Open: {this.state.openYesterday} </text>
+            <text>High: {this.state.highYesterday}</text>
+            <text>Low: {this.state.lowYesterday}</text>
+            <text>Close: {this.state.closeYesterday}</text>
             <text>%</text>
             <text>Difference</text>
         </div>
