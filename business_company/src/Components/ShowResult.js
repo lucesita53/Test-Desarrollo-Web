@@ -20,7 +20,10 @@ class ShowResults extends Component {
     openYesterday : '',
     highYesterday :'',
     lowYesterday : '',
-    closeYesterday : ''
+    closeYesterday : '',
+    difference: '',
+    percentage: '',
+    color: ''
   }
 
   componentDidMount() {
@@ -32,8 +35,19 @@ class ShowResults extends Component {
   }
 
    onResponse = ({open, high, low, close, date, yesterday, openYesterday, highYesterday, lowYesterday, closeYesterday}) =>{
-     //TODO: validar si son diferentes, calcular la diferencia y el %
-     //TODO: Si el valor del % es negativo ponerle color rojo, sino verde
+     if (close != '') {
+        var dif = parseFloat(close - closeYesterday).toFixed(2);
+        this.percentage = "Percentage: " + parseFloat((dif / close)*100).toFixed(2) + " %";
+        this.difference = "Difference: " + dif;
+        if (this.percentage < 0) {
+          this.color = 'rgba(255,0,0,0.7)';
+        } else {
+          this.color = 'rgba(0,255,0,0.7)'
+        }
+     } else {
+        this.difference = "Sorry, there's no closing value available yet, try later";
+     }
+
     this.setState({open: open,
       high :high,
       low: low,
@@ -43,7 +57,10 @@ class ShowResults extends Component {
       openYesterday : openYesterday,
       highYesterday : highYesterday,
       lowYesterday : lowYesterday,
-      closeYesterday : closeYesterday});
+      closeYesterday : closeYesterday,
+      difference: this.difference,
+      percentage: this.percentage,
+      color: this.color});
   }
 
   render() {
@@ -59,8 +76,10 @@ class ShowResults extends Component {
             <text>High: {this.state.highYesterday}</text>
             <text>Low: {this.state.lowYesterday}</text>
             <text>Close: {this.state.closeYesterday}</text>
-            <text>%</text>
-            <text>Difference</text>
+            <text style={{paddingTop: 10}}>{this.state.difference}</text>
+            <div style={{color: this.state.color}}>
+              <h4>{this.state.percentage}</h4>
+            </div>
         </div>
     );
   }

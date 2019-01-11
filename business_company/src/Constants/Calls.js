@@ -17,7 +17,7 @@ export default class Calls {
                 let keyYesterday = date.getFullYear() + '-' + month + '-' + (date.getDate() - 1);
                 return [dailies[key], key, dailies[keyYesterday], keyYesterday];})
             .then(result =>{
-                if (result['0'] & result['2']) {
+                if (result['0'] && result['2']) {
                     onSuccess({'open' : result['0']['1. open'],
                     'high' :result['0']['2. high'],
                     'low' : result['0']['3. low'],
