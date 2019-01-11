@@ -8,9 +8,8 @@ import all from './Images/All.png'
 import Dropdown, {MenuItem}  from 'react-dropdown'
 import 'react-dropdown/style.css'
 
-const options = [
-  'Facebook', 'Apple', 'Microsoft', 'Google', 'Amazon'
-]
+const options = ['Facebook', 'Apple', 'Microsoft', 'Google', 'Amazon']
+const optionsId = ['FB', 'AAPL', 'MSFT', 'GOOGL', 'AMZN']
 
 
 class App extends Component {
@@ -23,8 +22,9 @@ class App extends Component {
   }
 
   _onSelect = ({value}) => {
-    console.log(value);
-    this.carousel.updateCurrentItem(options.indexOf(value) > -1 ? options.indexOf(value) : -1);
+    let index = options.indexOf(value) > -1 ? options.indexOf(value) : -1;
+    this.carousel.updateCurrentItem(index);
+    this.result.updateResult(index > -1 ? optionsId[index]: '');
     this.setState({dropdown: value})
   }
 
@@ -54,7 +54,7 @@ class App extends Component {
                       placeholder="Select business company" />
           </div>
           <div className="App-body">
-            <ShowResults />
+            <ShowResults ref={component => this.result = component}/>
           </div>
         </body>
       </div>
