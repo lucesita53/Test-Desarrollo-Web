@@ -16,10 +16,12 @@ export default class Calls {
                            let key = date.getFullYear() + '-' + month + '-' + date.getDate();
                            return dailies[key];})
                         .then(result =>{
-                            onSuccess({'open' : result['1. open'],
-                            'high' :result['2. high'],
-                            'low' : result['3. low'],
-                            'close' : result['4. close']});
+                            if (result) {
+                                onSuccess({'open' : result['1. open'],
+                                'high' :result['2. high'],
+                                'low' : result['3. low'],
+                                'close' : result['4. close']});
+                            }
                         });
     }
 }
